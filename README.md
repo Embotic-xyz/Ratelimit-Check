@@ -1,4 +1,4 @@
-# Discord Rate Limit Checker Bot
+# Discord Rate Limit Check
 
 This Discord bot checks whether specific IP addresses are rate-limited by Discord. The bot responds to the `!check` command by providing rate limit information for a list of predefined IP addresses.
 
