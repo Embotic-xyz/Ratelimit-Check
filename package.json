@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  },
+  "name": "ratelimit-check",
+  "version": "1.0.0",
+  "description": "This is a discord.js bot which can check if your IP addres's are ratelimited on discord.",
+  "main": "index.mjs",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Embotic-xyz/Ratelimit-Check.git"
+  },
+  "author": "SuperEvilLuke",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Embotic-xyz/Ratelimit-Check/issues"
+  },
+  "homepage": "https://github.com/Embotic-xyz/Ratelimit-Check#readme"
+}
