@@ -19,7 +19,7 @@ This Discord bot checks whether specific IP addresses are rate-limited by Discor
 1. Clone the repository:
     ```sh
     git clone https://github.com/Embotic-xyz/Ratelimit-Check.git
-    cd discord-rate-limit-checker
+    cd discord-rate-limit-check
     ```
 
 2. Install the dependencies:
