@@ -14,6 +14,7 @@ const client = new Client({
 });
 
 const ipList = [
+    'made-by-embotic.xyz',
     '45.84.59.27',
     '45.84.59.49',
     '45.84.59.50',
