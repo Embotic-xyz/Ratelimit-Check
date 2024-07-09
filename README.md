@@ -19,7 +19,7 @@ This Discord bot checks whether specific IP addresses are rate-limited by Discor
 1. Clone the repository:
     ```sh
     git clone https://github.com/Embotic-xyz/Ratelimit-Check.git
-    cd rate-limit-check
+    cd ratelimit-check
     ```
 
 2. Install the dependencies:
@@ -27,27 +27,27 @@ This Discord bot checks whether specific IP addresses are rate-limited by Discor
     npm install
     ```
 
-3. In the `.env` file, add your Discord bot token
+3. In the `.env.example` file, add your Discord bot token, then rename it to `.env`
 
 
 ## Usage
 
 1. Start the bot:
     ```sh
-    node index.mjs
+    node index.js
     ```
 
 2. Use the `!check` command in any channel the bot has access to. The bot will respond with an embed containing the rate limit status of each specified IP address.
 
 ## Code Overview
 
-- `index.mjs`: Main file containing the bot logic.
+- `index.js`: Main file containing the bot logic.
 - `.env`: Environment file for storing sensitive information like the bot token.
 
 ### Main Functionality
 
 - The bot listens for the `!check` command and responds with an embed containing rate limit information for a list of predefined IP addresses.
-- It uses the `node-fetch` library to make HTTP requests to the Discord API, passing each IP address as a header to check its rate limit status.
+- It uses the `axios` library to make HTTP requests to the Discord API, passing each IP address as a header to check its rate limit status.
 
 ## Example
 
@@ -58,8 +58,9 @@ https://prnt.sc/cPGwaCbKkV8f
 ## Dependencies
 
 - [discord.js](https://www.npmjs.com/package/discord.js)
-- [node-fetch](https://www.npmjs.com/package/node-fetch)
+- [axios](https://www.npmjs.com/package/axios)
 - [dotenv](https://www.npmjs.com/package/dotenv)
+- [colors](https://www.npmjs.com/package/colors)
 
 ## Contributing
 
@@ -67,4 +68,4 @@ If you find any issues or have suggestions for improvements, please open an issu
 
 ## License
 
-This project is licensed under the GPL-3.0 License. See the LICENSE.MD file for details.
+This project is licensed under the GPL-3.0 License. See the LICENSE file for details.
