@@ -1,9 +1,9 @@
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const axios = require('axios');
 const dotenv = require('dotenv');
-const colors = require('colors')
+const colors = require('colors');
 dotenv.config();
-colors.enable()
+colors.enable();
 
 const client = new Client({
     intents: [
@@ -25,9 +25,9 @@ const ipList = [
 ];
 
 client.once('ready', () => {
-    console.log(colors.blue('-- Discord Rate Limit Checker --'))
-    console.log(colors.yellow('This was created by @superevilluke and all credit must be given to him for creating this.'))
-    console.log(colors.green('The Discord bot has successfully connected to Discord API'))
+    console.log(colors.blue('-- Discord Rate Limit Checker --'));
+    console.log(colors.yellow('This was created by @superevilluke and all credit must be given to him for creating this.'));
+    console.log(colors.green('The Discord bot has successfully connected to Discord API'));
 });
 
 client.on('messageCreate', async message => {
@@ -53,16 +53,16 @@ client.on('messageCreate', async message => {
                 console.log(`IP: ${ip}, Remaining: ${remaining}, Reset: ${reset}`);
 
                 if (remaining === '0') {
-                    return { ip, rateLimited: true, reset: new Date(reset * 1000).toLocaleString() };
+                    return { ip, rateLimited: "**Yes**", reset: new Date(reset * 1000).toLocaleString() };
                 } else {
-                    return { ip, rateLimited: false };
+                    return { ip, rateLimited: "**No**" };
                 }
             } catch (error) {
                 if (error.response) {
                     if (error.response.status === 429) {
                         const retryAfter = error.response.headers['retry-after'];
-                        console.log(`IP: ${ip}, Rate limited: true, Retry-After: ${retryAfter}`);
-                        return { ip, rateLimited: true, retryAfter: retryAfter ? `${retryAfter} seconds` : 'Unknown' };
+                        console.log(`IP: ${ip}, Rate limited: Yes, Retry-After: ${retryAfter}`);
+                        return { ip, rateLimited: "Yes", retryAfter: retryAfter ? `${retryAfter} seconds` : 'Unknown' };
                     } else {
                         console.log(`IP: ${ip}, Error: ${error.response.status} ${error.response.statusText}`);
                         return { ip, rateLimited: `Error: ${error.response.status} ${error.response.statusText}` };
@@ -90,13 +90,14 @@ client.on('messageCreate', async message => {
             .setTitle('IP Rate Limit Check')
             .setColor(0x0099ff)
             .setDescription('Results of rate limit check on the given IPs:')
-            .setTimestamp();
+            .setTimestamp()
+            .setFooter({ text: 'These aren\' 100% correct, we suggest rerunning the commands a few times to get the best results' });
 
         results.forEach(result => {
-            embed.addFields({ 
-                name: `IP: ${result.ip}`, 
-                value: `Rate Limited: ${result.rateLimited} ${result.reset ? `(Reset at: ${result.reset})` : ''} ${result.retryAfter ? `(Retry after: ${result.retryAfter})` : ''}`, 
-                inline: false 
+            embed.addFields({
+                name: `IP: ${result.ip}`,
+                value: `Rate Limited: ${result.rateLimited} ${result.reset ? `(Reset at: ${result.reset})` : ''} ${result.retryAfter ? `(Retry after: ${result.retryAfter})` : ''}`,
+                inline: false
             });
         });
 
