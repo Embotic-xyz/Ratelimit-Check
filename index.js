@@ -12,9 +12,9 @@ const client = new Client({
         GatewayIntentBits.MessageContent
     ]
 });
-
+//here you can add your IP addresses
 const ipList = [
-    'made-by-embotic.xyz',
+    'made-by-embotic.xyz', //keep this or it will break
     '45.84.59.27',
     '45.84.59.49',
     '45.84.59.50',
