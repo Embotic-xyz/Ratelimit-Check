@@ -91,7 +91,7 @@ client.on('messageCreate', async message => {
             .setColor(0x0099ff)
             .setDescription('Results of rate limit check on the given IPs:')
             .setTimestamp()
-            .setFooter({ text: 'Made by @superevilluke & lezeth0' });
+            .setFooter({ text: 'Made by superevilluke & lezeth0' });
 
         results.forEach(result => {
             embed.addFields({
