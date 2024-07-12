@@ -7,7 +7,7 @@ This Discord bot checks whether specific IP addresses are rate-limited by Discor
 - Checks if specified IP addresses are rate-limited by Discord.
 - Provides detailed information about each IP address.
 - Uses Discord.js v14 for interacting with the Discord API.
-- Fetches the bot token securely from a `.env` file.
+- Fetches the bot token from the `.env` file.
 
 ## Prerequisites
 
